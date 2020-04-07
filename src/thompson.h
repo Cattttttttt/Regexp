@@ -1,7 +1,13 @@
 #pragma once
 #include <string>
+#include <stack>
 
 class NFA { //NFA Nodes
+  public :
+    //Constructors
+    explicit NFA(char a);
+    explicit NFA(const NFA& a);
+
   private :
 
   public :
@@ -15,6 +21,8 @@ class NFAProcess {  //NFA Main Module
   
   private :
     std::string RegExp;
+    std::stack<char> operatorStack;
+    std::stack<NFA> NFANodesStack;
 
   public :
     void init();
