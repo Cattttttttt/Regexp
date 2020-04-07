@@ -1,18 +1,7 @@
 #pragma once
 #include <string>
 #include <stack>
-
-class NFA { //NFA Nodes
-  public :
-    //Constructors
-    explicit NFA(char a);
-    explicit NFA(const NFA& a);
-
-  private :
-
-  public :
-    static NFA combine();
-};
+#include "NFANodes.h"
 
 class NFAProcess {  //NFA Main Module
   public :
