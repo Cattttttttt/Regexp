@@ -6,14 +6,16 @@
 class NFAProcess {  //NFA Main Module
   public :
     //Constructor
-    NFAProcess();
+    explicit NFAProcess();
   
-  private :
+  public :
     std::string RegExp;
-    std::stack<char> operatorStack;
-    std::stack<NFA> NFANodesStack;
+    NFA* NFAMap;
+
+    int getOpPriority(char op);
+    void throwError();
 
   public :
-    void init();
-    
+    void init(std::string regexp);
+    bool runTest(std::string match);
 };
